@@ -1,4 +1,5 @@
 import { Toaster } from "@/components/ui/toaster";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +15,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {/* WhatsApp Floating Button (global) */}
+
       <BrowserRouter basename="/secure-stanley-home">
         <Routes>
           <Route path="/" element={<Index />} />
