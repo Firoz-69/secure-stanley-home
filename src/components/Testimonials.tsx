@@ -14,7 +14,7 @@ const testimonials = [
   },
   {
     id: 2,
-    name: "Ajay Sharma",
+    name: "Arfaan Vaanat",
     position: "Operations Director",
     company: "Industrial Solutions Pvt Ltd",
     image:
@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     id: 3,
-    name: "Mohammed Hareesh",
+    name: "Mohammed Kanishk",
     position: "Plant Head",
     company: "Steel Manufacturing Co.",
     image:
