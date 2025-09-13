@@ -78,7 +78,7 @@ export default function AnimatedLogoTagline() {
   return (
     <div style={{ position: "relative", height: "60vh" }}>
       <img
-        src="/logo.jpg"
+        src={`${import.meta.env.BASE_URL}logo.jpg`}
         alt="Stanley Safety Products Logo"
         style={{
           ...logoStyle,

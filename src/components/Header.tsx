@@ -33,7 +33,7 @@ const Header = () => {
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
             <img
-              src="/logo.jpg"
+              src={`${import.meta.env.BASE_URL}logo.jpg`}
               alt="Stanley Safety Products Logo"
               className="h-12 w-auto transition-opacity duration-500"
               style={{ opacity: showLogo ? 1 : 0 }}
