@@ -72,7 +72,7 @@ const ProductCategories = () => {
             return (
               <div
                 key={category.id}
-                className="card-category animate-fade-up"
+                className="card-category group animate-fade-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Image */}

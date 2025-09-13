@@ -119,11 +119,11 @@ All colors MUST be HSL.
 
   /* Card Styles */
   .card-product {
-    @apply bg-card rounded-xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-1 group;
+    @apply bg-card rounded-xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elegant)] transition-all duration-300 hover:-translate-y-1;
   }
 
   .card-category {
-    @apply relative bg-card rounded-xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-safety)] transition-all duration-300 hover:-translate-y-2 group cursor-pointer;
+    @apply relative bg-card rounded-xl overflow-hidden shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-safety)] transition-all duration-300 hover:-translate-y-2 cursor-pointer;
   }
 
   /* Gradient Backgrounds */
