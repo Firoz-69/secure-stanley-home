@@ -40,7 +40,21 @@ const Header = () => {
         {/* Main Navigation */}
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-gradient-safety">
+            {/* Logo will be placed here once uploaded */}
+            <img 
+              src="/logo.png" 
+              alt="Stanley Safety Products Logo" 
+              className="h-12 w-auto mr-3"
+              onError={(e) => {
+                // Fallback to text logo if image fails to load
+                e.currentTarget.style.display = 'none';
+                const textLogo = document.createElement('div');
+                textLogo.className = 'text-2xl font-bold text-gradient-safety';
+                textLogo.textContent = 'STANLEY SAFETY';
+                e.currentTarget.parentNode?.appendChild(textLogo);
+              }}
+            />
+            <div className="text-2xl font-bold text-gradient-safety hidden logo-fallback">
               STANLEY SAFETY
             </div>
           </div>
