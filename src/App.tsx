@@ -14,6 +14,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {/* WhatsApp Floating Button (global) */}
+
       <BrowserRouter basename="/secure-stanley-home">
         <Routes>
           <Route path="/" element={<Index />} />

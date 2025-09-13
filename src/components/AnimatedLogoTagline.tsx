@@ -120,6 +120,29 @@ export default function AnimatedLogoTagline() {
         >
           "Protecting Lives, Empowering Safety"
         </span>
+        <button
+          style={{
+            marginLeft: "2rem",
+            padding: "0.6rem 1.6rem",
+            fontSize: "1rem",
+            fontWeight: 600,
+            color: "#fff",
+            background: "linear-gradient(90deg, #38bdf8 60%, #64748b 100%)",
+            border: "none",
+            borderRadius: "1.5rem",
+            boxShadow: "0 2px 12px rgba(56,189,248,0.18)",
+            cursor: "pointer",
+            transition: "background 0.3s, box-shadow 0.3s",
+          }}
+          onClick={() => {
+            const el = document.getElementById("product-categories");
+            if (el) {
+              el.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
+          Learn More
+        </button>
         {/* Animated text keyframes */}
         <style>{`
           @keyframes fadeInText {
