@@ -47,15 +47,30 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        // Stanley Safety Brand Colors
+        safety: {
+          orange: "hsl(var(--safety-orange))",
+          "orange-light": "hsl(var(--safety-orange-light))",
+          "orange-dark": "hsl(var(--safety-orange-dark))",
+        },
+        industrial: {
+          blue: "hsl(var(--industrial-blue))",
+          "blue-light": "hsl(var(--industrial-blue-light))",
+          "blue-dark": "hsl(var(--industrial-blue-dark))",
+        },
+        warning: {
+          yellow: "hsl(var(--warning-yellow))",
+        },
+        success: {
+          green: "hsl(var(--success-green))",
+        },
+        steel: {
+          gray: "hsl(var(--steel-gray))",
+          "gray-light": "hsl(var(--steel-gray-light))",
+        },
+        concrete: {
+          gray: "hsl(var(--concrete-gray))",
+          light: "hsl(var(--light-concrete))",
         },
       },
       borderRadius: {
