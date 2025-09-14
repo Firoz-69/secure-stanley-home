@@ -1,3 +1,71 @@
+/* Flip Card Effect for SafetyFacts */
+.flip-card {
+  perspective: 1200px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+}
+.flip-card-front {
+  z-index: 2;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 18s linear infinite;
+  }
+}
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.group-hover\:rotate-y-180:hover {
+  transform: rotateY(180deg);
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+.hover\:animation-pause:hover {
+  animation-play-state: paused;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,21 +80,21 @@ All colors MUST be HSL.
     --safety-orange: 22 100% 50%;
     --safety-orange-light: 22 100% 60%;
     --safety-orange-dark: 22 100% 40%;
-    
+
     --industrial-blue: 214 100% 45%;
     --industrial-blue-light: 214 100% 55%;
     --industrial-blue-dark: 214 100% 35%;
-    
+
     --warning-yellow: 48 100% 50%;
     --success-green: 142 76% 36%;
-    
+
     /* Neutral Palette */
     --steel-gray: 210 11% 15%;
     --steel-gray-light: 210 11% 25%;
     --concrete-gray: 210 8% 45%;
     --light-concrete: 210 8% 85%;
     --safety-white: 0 0% 100%;
-    
+
     /* Semantic Design System */
     --background: 0 0% 100%;
     --foreground: 210 11% 15%;
@@ -59,10 +127,26 @@ All colors MUST be HSL.
     --radius: 0.5rem;
 
     /* Custom Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--safety-orange)), hsl(var(--safety-orange-dark)));
-    --gradient-industrial: linear-gradient(180deg, hsl(var(--industrial-blue)), hsl(var(--industrial-blue-dark)));
-    --gradient-safety: linear-gradient(45deg, hsl(var(--safety-orange)), hsl(var(--warning-yellow)));
-    --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(var(--safety-orange)),
+      hsl(var(--safety-orange-dark))
+    );
+    --gradient-industrial: linear-gradient(
+      180deg,
+      hsl(var(--industrial-blue)),
+      hsl(var(--industrial-blue-dark))
+    );
+    --gradient-safety: linear-gradient(
+      45deg,
+      hsl(var(--safety-orange)),
+      hsl(var(--warning-yellow))
+    );
+    --gradient-overlay: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.3)
+    );
 
     /* Shadows */
     --shadow-safety: 0 10px 30px -5px hsl(var(--safety-orange) / 0.3);
@@ -86,7 +170,12 @@ All colors MUST be HSL.
   }
 
   /* Typography */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-bold tracking-tight;
   }
 
