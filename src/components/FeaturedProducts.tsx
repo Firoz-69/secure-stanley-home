@@ -97,6 +97,8 @@ const FeaturedProducts = () => {
     }
   };
 
+  // ...existing code...
+
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -141,13 +143,17 @@ const FeaturedProducts = () => {
                 key={product.id}
                 className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
               >
-                <div className="card-product group">
+                <div className="card-product group relative bg-white rounded-2xl shadow-lg overflow-visible transition-all duration-500 border border-gray-200 hover:border-primary hover:shadow-2xl hover:scale-[1.03] hover:z-10">
                   {/* Product Image */}
-                  <div className="relative overflow-hidden">
+                  <div
+                    className="relative overflow-visible flex items-center justify-center"
+                    style={{ minHeight: "16rem" }}
+                  >
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-64 object-cover rounded-xl shadow-md transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-4 group-hover:shadow-2xl"
+                      style={{ zIndex: 2 }}
                     />
 
                     {/* Badge */}
@@ -172,11 +178,11 @@ const FeaturedProducts = () => {
                     </div>
 
                     {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent group-hover:from-black/20 transition-all duration-300 pointer-events-none rounded-xl" />
                   </div>
 
                   {/* Product Details */}
-                  <div className="p-6">
+                  <div className="p-6 pt-4">
                     {/* Rating */}
                     <div className="flex items-center gap-2 mb-3">
                       <div className="flex items-center gap-1">
@@ -197,7 +203,7 @@ const FeaturedProducts = () => {
                     </div>
 
                     {/* Product Name */}
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors drop-shadow-lg">
                       {product.name}
                     </h3>
 
@@ -212,15 +218,22 @@ const FeaturedProducts = () => {
                     </ul>
 
                     {/* Price and Actions */}
-                    <div className="flex items-center justify-between">
-                      <div className="text-2xl font-bold text-primary">
+                    <div className="flex items-center justify-between mt-6">
+                      <div className="text-2xl font-bold text-primary drop-shadow-md">
                         {product.price}
                       </div>
                       <div className="flex gap-2">
-                        <Button variant="outline" size="sm" className="text-xs">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="text-xs border-primary hover:bg-primary hover:text-white transition-colors"
+                        >
                           Details
                         </Button>
-                        <Button size="sm" className="btn-hero text-xs">
+                        <Button
+                          size="sm"
+                          className="btn-hero text-xs shadow-md hover:scale-105 transition-transform"
+                        >
                           Add to Enquiry
                         </Button>
                       </div>
@@ -232,6 +245,18 @@ const FeaturedProducts = () => {
           </div>
         </div>
 
+        {/* Services Marquee UI Element */}
+        <div className="w-full overflow-hidden mt-8 mb-4">
+          <div className="whitespace-nowrap animate-marquee flex gap-12 text-lg font-semibold text-primary px-4">
+            <span>Available 24/7</span>
+            <span>Quality for life</span>
+            <span>Trusted by professionals</span>
+            <span>Safety. Reliability. Excellence.</span>
+            <span>Certified Equipment</span>
+            <span>Fast Delivery</span>
+            <span>Expert Support</span>
+          </div>
+        </div>
         {/* Mobile Navigation */}
         <div className="flex md:hidden justify-center gap-2 mt-8">
           <button
