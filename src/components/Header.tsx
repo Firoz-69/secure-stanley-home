@@ -16,21 +16,33 @@ const Header = () => {
   ];
 
   const [showLogo, setShowLogo] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => {
       setShowLogo(window.scrollY > 120);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-[var(--shadow-elegant)]">
+    <header
+      className={`sticky top-0 z-50 border-b border-border shadow-[var(--shadow-elegant)] transition-colors duration-300 ${
+        scrolled
+          ? "bg-black/60 backdrop-blur-md text-white"
+          : "bg-background/95 backdrop-blur-sm text-foreground"
+      }`}
+    >
       <div className="container mx-auto px-4">
         {/* Top Bar */}
 
         {/* Main Navigation */}
-        <div className="flex items-center justify-between py-4">
+        <div
+          className={`flex items-center justify-between py-4 ${
+            scrolled ? "text-white" : "text-foreground"
+          }`}
+        >
           <div className="flex items-center">
             <img
               src={`${import.meta.env.BASE_URL}logo.jpg`}
@@ -41,7 +53,11 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav
+            className={`hidden lg:flex items-center gap-8 ${
+              scrolled ? "text-white" : "text-foreground"
+            }`}
+          >
             <a
               href="#"
               className="font-medium hover:text-primary transition-colors"
